@@ -43,8 +43,8 @@ cd iac
 <pre><code>aws rekognition start-stream-processor --name stream-video-rekognition-processor</code></pre>
 6. Start stream to your video stream that you just created - MyDataStream. You can use [Amazon Kinesis Video Streams Producer SDK](https://github.com/awslabs/amazon-kinesis-video-streams-producer-sdk-cpp#building-from-source) from the AWS Labs GitHub repository, that includes various ways of writing to a Kinesis Video Stream. These include native SDKs, a gstreamer application that uses the webcam on your Mac or PC, a Raspberry Pi project, and other methods.
 
-$ gst-launch-1.0 autovideosrc ! videoconvert ! video/x-raw,format=I420,width=640,height=480,framerate=30/1 ! vtenc_h264_hw allow-frame-reordering=FALSE realtime=TRUE max-keyframe-interval=45 bitrate=1000 ! h264parse ! video/x-h264,stream-format=avc,alignment=au,profile=baseline ! kvssink stream-name=MyVideoStream-jghGnG3iheHb storage-size=128 access-key="AKIAQAQI5HPOV" secret-key="ic/qb3m7woo70ONJQiUO2efgddgwJ"
-
+## Camera launch from terminal or RTSP camera
+$ gst-launch-1.0 autovideosrc ! videoconvert ! video/x-raw,format=I420,width=640,height=480,framerate=30/1 ! vtenc_h264_hw allow-frame-reordering=FALSE realtime=TRUE max-keyframe-interval=45 bitrate=1000 ! h264parse ! video/x-h264,stream-format=avc,alignment=au,profile=baseline ! kvssink stream-name=MyVideoStream-jghGnG3iheHb storage-size=128 access-key="" secret-key=""
 Run the following command to start the webcam from you MAC.
 
 Command for RTSP camera
